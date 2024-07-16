@@ -1,8 +1,12 @@
-export default class VehiculoElectrico {
+
+
+class VehiculoElectrico {
+    
     constructor(nivelBateria = 100) {
         this.nivelBateria = nivelBateria;
     }
 
+    
     cargarBateria() {
         if (this.nivelBateria < 100) {
             this.nivelBateria++;
@@ -12,6 +16,7 @@ export default class VehiculoElectrico {
         }
     }
 
+    
     usarBateria() {
         if (this.nivelBateria > 0) {
             this.nivelBateria--;
@@ -21,3 +26,6 @@ export default class VehiculoElectrico {
         }
     }
 }
+
+
+export default VehiculoElectrico;

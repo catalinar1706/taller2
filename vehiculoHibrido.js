@@ -1,10 +1,22 @@
 import VehiculoElectrico from './vehiculoElectrico.js';
 import VehiculoCombustion from './vehiculoCombustion.js';
 
-export default class VehiculoHibrido extends VehiculoElectrico {
+
+class VehiculoHibrido {
+   
     constructor(nivelBateria = 100, nivelCombustible = 100) {
-        super(nivelBateria);
+        
+        this.vehiculoElectrico = new VehiculoElectrico(nivelBateria);
         this.vehiculoCombustion = new VehiculoCombustion(nivelCombustible);
+    }
+
+    
+    cargarBateria() {
+        this.vehiculoElectrico.cargarBateria();
+    }
+
+    usarBateria() {
+        this.vehiculoElectrico.usarBateria();
     }
 
     llenarTanque() {
@@ -15,8 +27,12 @@ export default class VehiculoHibrido extends VehiculoElectrico {
         this.vehiculoCombustion.usarCombustible();
     }
 
+    
     mostrarEstado() {
-        console.log(`Nivel de batería: ${this.nivelBateria}%`);
+        console.log(`Nivel de batería: ${this.vehiculoElectrico.nivelBateria}%`);
         console.log(`Nivel de combustible: ${this.vehiculoCombustion.nivelCombustible}%`);
     }
 }
+
+
+export default VehiculoHibrido;

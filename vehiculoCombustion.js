@@ -1,8 +1,13 @@
-export default class VehiculoCombustion {
+
+
+
+class VehiculoCombustion {
+    
     constructor(nivelCombustible = 100) {
         this.nivelCombustible = nivelCombustible;
     }
 
+   
     llenarTanque() {
         if (this.nivelCombustible < 100) {
             this.nivelCombustible++;
@@ -12,6 +17,7 @@ export default class VehiculoCombustion {
         }
     }
 
+   
     usarCombustible() {
         if (this.nivelCombustible > 0) {
             this.nivelCombustible--;
@@ -21,3 +27,6 @@ export default class VehiculoCombustion {
         }
     }
 }
+
+
+export default VehiculoCombustion;
