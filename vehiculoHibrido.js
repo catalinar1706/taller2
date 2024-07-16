@@ -1,38 +1,29 @@
-import VehiculoElectrico from './vehiculoElectrico.js';
 import VehiculoCombustion from './vehiculoCombustion.js';
+import VehiculoElectrico from './vehiculoElectrico.js';
 
-
-class VehiculoHibrido {
-   
-    constructor(nivelBateria = 100, nivelCombustible = 100) {
-        
-        this.vehiculoElectrico = new VehiculoElectrico(nivelBateria);
-        this.vehiculoCombustion = new VehiculoCombustion(nivelCombustible);
+export default class VehiculoHibrido {
+    constructor() {
+        this.VehiculoElectrico1 = new VehiculoElectrico (50);
+        this.VehiculoCombustion1 = new  VehiculoCombustion(80)
     }
-
-    
-    cargarBateria() {
-        this.vehiculoElectrico.cargarBateria();
+    CargarBateria (){
+        this.VehiculoElectrico1.cargarBateria()
     }
-
     usarBateria() {
-        this.vehiculoElectrico.usarBateria();
+        this.VehiculoElectrico1.usarBateria();
     }
 
     llenarTanque() {
-        this.vehiculoCombustion.llenarTanque();
+        this.VehiculoCombustion1.llenarTanque();
     }
 
     usarCombustible() {
-        this.vehiculoCombustion.usarCombustible();
+        this.VehiculoCombustion1.usarCombustible();
     }
 
-    
+
     mostrarEstado() {
-        console.log(`Nivel de batería: ${this.vehiculoElectrico.nivelBateria}%`);
-        console.log(`Nivel de combustible: ${this.vehiculoCombustion.nivelCombustible}%`);
+        console.log("Nivel de la bateria " + this.VehiculoElectrico1.getNivelbateria());
+        console.log("Nivel combustible " + this.VehiculoCombustion1.getNivelCombustible());
     }
 }
-
-
-export default VehiculoHibrido;

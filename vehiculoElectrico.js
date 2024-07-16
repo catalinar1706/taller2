@@ -1,31 +1,16 @@
-
-
-class VehiculoElectrico {
-    
-    constructor(nivelBateria = 100) {
-        this.nivelBateria = nivelBateria;
+export default class VehiculoElectrico {
+    constructor(nivelBateria) {
+      this.nivelBateria = nivelBateria; 
     }
-
-    
+  
     cargarBateria() {
-        if (this.nivelBateria < 100) {
-            this.nivelBateria++;
-            console.log(`Cargando batería: ${this.nivelBateria}%`);
-        } else {
-            console.log('La batería ya está completamente cargada.');
-        }
+      console.log("cargarBateria " + this.nivelBateria);
     }
-
-    
-    usarBateria() {
-        if (this.nivelBateria > 0) {
-            this.nivelBateria--;
-            console.log(`Usando batería: ${this.nivelBateria}%`);
-        } else {
-            console.log('La batería está vacía.');
-        }
+  
+    usarBateria(cantidad) {
+      console.log("usarBateria " + this.nivelBateria);
     }
-}
-
-
-export default VehiculoElectrico;
+    getNivelbateria() {
+      return this.nivelBateria
+    }
+  }

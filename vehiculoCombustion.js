@@ -1,32 +1,17 @@
-
-
-
-class VehiculoCombustion {
-    
-    constructor(nivelCombustible = 100) {
+export default class VehiculoCombustion {
+    constructor(nivelCombustible) {
         this.nivelCombustible = nivelCombustible;
     }
 
-   
     llenarTanque() {
-        if (this.nivelCombustible < 100) {
-            this.nivelCombustible++;
-            console.log(`Llenando tanque: ${this.nivelCombustible}%`);
-        } else {
-            console.log('El tanque ya está lleno.');
-        }
+        console.log("El tanque se esta llenando " + this.nivelCombustible + "%");
     }
 
-   
     usarCombustible() {
-        if (this.nivelCombustible > 0) {
-            this.nivelCombustible--;
-            console.log(`Usando combustible: ${this.nivelCombustible}%`);
-        } else {
-            console.log('El tanque está vacío.');
-        }
+        console.log("El uso  de Combustible va en " + this.nivelCombustible + "%");
     }
+    getNivelCombustible() {
+        return this.nivelCombustible;
+    }
+
 }
-
-
-export default VehiculoCombustion;
